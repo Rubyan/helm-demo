@@ -41,10 +41,7 @@ service:
   port: 80
 
 ingressgate:
-  enabled: true
-  hosts:
-    - host: helm-demo.apps.ocp-prd.alliander.com
-      paths: []
+  host: helm-demo.apps.ocp-prd.alliander.com
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious

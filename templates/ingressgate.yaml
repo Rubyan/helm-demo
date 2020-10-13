@@ -3,7 +3,7 @@ kind: IngressGate
 metadata:
   name: {{ include "helm-demo.fullname" . }}
 spec:
-    host: {{ .host | quote }}
+    host: {{ .Values.ingressgate.host | quote }}
     auth:
       type: NONE
     services:
