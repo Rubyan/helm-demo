@@ -1,0 +1,15 @@
+{{- $fullName := include "helm-demo.fullname" . -}}
+{{- $svcPort := .Values.service.port -}}
+apiVersion: gatemin.io/v1alpha1
+kind: IngressGate
+metadata:
+  name: {{ $fullname }}
+spec:
+    host: {{ .host | quote }}
+    auth:
+      type: NONE
+    services:
+      - backend:
+          serviceName: {{ $fullName }}
+          servicePort: {{ $svcPort }}
+        path: /
